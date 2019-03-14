@@ -1,17 +1,16 @@
 // Business Logic for AddressBook ---------
-function AddressBook() {
-  this.contacts = []
-}
-
-AddressBook.prototype.addContact = function(contact) {
-  this.contacts.push(contact);
-}
 
 // Business Logic for Contacts ---------
-function Contact(firstName, lastName, phoneNumber) {
-  this.firstName = firstName,
-  this.lastName = lastName,
-  this.phoneNumber = phoneNumber
+function Contact(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+  this.addresses = [];
+}
+
+function Address(street, city, state) {
+  this.street = street;
+  this.city = city;
+  this.state = state;
 }
 
 Contact.prototype.fullName = function() {
@@ -21,12 +20,25 @@ Contact.prototype.fullName = function() {
 $(document).ready(function() {
   $("form#input-number").submit(function(event) {
       event.preventDefault();
-      var nameInput = $("input#name").val();
-      var addressInput = $("input#address").val();
-      var phoneInput = $("input#phone").val();
-      var contact1 = new Contact(nameInput, addressInput, phoneInput);
-      var contact2 = new Contact(document.getElementById("name").value, document.getElementById("address").value, document.getElementById("phone").value);
-      $("#result").append(contact2) ;
-      contact1.addContact();
+      var firstInput = $("input#first").val();
+      var lastInput = $("input#last").val();
+      var streetInput = $("input#street").val();
+      var cityInput = $("input#city").val();
+      var stateInput = $("input#state").val();
+      var newContact = new Contact(firstInput, lastInput);
+
+      var newAddress = new Address(streetInput, cityInput, stateInput);
+      $("#show-contact").show();
+      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+      $(".address-loc").text(newAddress.street+" "+newAddress.city+", "+newAddress.state);
+      $("#show-contact h2").text(newContact.firstName);
+      /*$(".contact").last().click(function() {
+      $("#show-contact").show();
+      $("#show-contact h2").text(newContact.firstName);
+      $(".first-name").append(newContact.firstName);
+      $(".last-name").append(newContact.lastName);
+    });*/
   });
 });

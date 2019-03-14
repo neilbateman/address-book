@@ -16,32 +16,49 @@
         <h1>Address Book</h1>
         <form id="input-number">
           <div class="form-group">
-            <label for="name">Enter a name:</label>
-            <input id="name" type="text" required>
+            <label for="first">Enter a first name:</label>
+            <input id="first" type="text" required>
           </div>
         </form><h1></h1>
         <form id="input-number">
           <div class="form-group">
-            <label for="address">Enter an address:</label>
-            <input id="address" type="text" required>
+            <label for="last">Enter a last name:</label>
+            <input id="last" type="text" required>
           </div>
         </form>
           <h1></h1>
         <form id="input-number">
           <div class="form-group">
-            <label for="phone">Enter a phone number:</label>
-            <input id="phone" type="text" required>
+            <label for="street">Enter a street address</label>
+            <input id="street" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="city">Enter a city:</label>
+            <input id="city" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="state">Enter a state:</label>
+            <input id="state" type="text" required>
           </div>
           <button type="submit" class="btn btn-danger" id="submit-button">Submit</button>
         </form>
       </div>
     </div>
 
-    <div id="result">
-    </div>
+    <h2>Contacts:</h2>
+      <ul id="contacts">
 
+      </ul>
 
+      <div id="show-contact">
+        <h2></h2>
+        <p>First name: <span class="first-name"></span></p>
+        <p>Last name: <span class="last-name"></span></p>
+        <p>Addresses: <span class="address-loc"></span></p>
+        <ul id="addresses">
 
+        </ul>
+      </div>
 
   </body>
 
