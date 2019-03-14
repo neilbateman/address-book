@@ -16,6 +16,9 @@ function Address(street, city, state) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
+Address.prototype.fullAddress = function () {
+  return this.street + ", " + this.city + " " + this.state;
+};
 
 $(document).ready(function() {
   $("form#input-number").submit(function(event) {
@@ -32,7 +35,7 @@ $(document).ready(function() {
       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
-      $(".address-loc").text(newAddress.street+" "+newAddress.city+", "+newAddress.state);
+      $(".address-loc").append( newAddress.fullAddress());
       $("#show-contact h2").text(newContact.firstName);
       /*$(".contact").last().click(function() {
       $("#show-contact").show();

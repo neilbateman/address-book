@@ -4,10 +4,26 @@
 }
 
 body {
-  /*background-image: url();*/
+  background-color: silver;
 }
 
 input {
   width: 60%;
   margin: auto;
+}
+.container {
+  margin-top: 50px;
+}
+.container2 {
+  padding-top: 30px;
+  padding-left: 50px;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+  color: darkblue;
+  font-size: 50px;
+}
+h2 {
+  color: darkblue;
 }
